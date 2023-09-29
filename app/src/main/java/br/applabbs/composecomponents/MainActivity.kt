@@ -11,7 +11,7 @@ import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import br.applabbs.composecomponents.ui.theme.ComposeComponentsTheme
 import br.applabbs.composecomponents.ui.theme.home.HomeApp
-import br.applabbs.composecomponents.ui.theme.swipeEffect.SwipeEffectCard
+import br.applabbs.composecomponents.ui.theme.swipeEffect.SwipeEffectCardScreen
 
 
 class MainActivity : ComponentActivity() {
@@ -28,9 +28,7 @@ class MainActivity : ComponentActivity() {
 
 @Composable
 fun Home() {
-
     NavHostImpl(navController = rememberNavController())
-
 }
 
 @Composable
@@ -43,7 +41,7 @@ fun NavHostImpl(navController: NavHostController){
             HomeApp(navHostController = navController)
         }
         composable("swipe_effect_card"){
-            SwipeEffectCard(navHostController = navController)
+            SwipeEffectCardScreen(navHostController = navController)
         }
 
         //implement other composable itens
