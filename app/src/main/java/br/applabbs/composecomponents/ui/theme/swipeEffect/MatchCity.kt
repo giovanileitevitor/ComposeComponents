@@ -8,7 +8,7 @@ data class MatchCity(
     @DrawableRes val cityImage: Int
 )
 
-val cities = listOf<MatchCity>(
+val cities = listOf(
     MatchCity("Berlim", R.drawable.ic_city_1),
     MatchCity("New York", R.drawable.ic_city_2),
     MatchCity("Adelaide", R.drawable.ic_city_3),
