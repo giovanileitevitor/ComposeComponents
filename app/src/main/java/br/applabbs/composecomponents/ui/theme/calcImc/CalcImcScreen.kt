@@ -125,11 +125,11 @@ fun CalculadoraImcScreen(navHostController: NavHostController){
                             Text(text = "Peso (KG)")
                         },
                         colors = TextFieldDefaults.outlinedTextFieldColors(
-                            cursorColor = Color.Blue,
-                            focusedBorderColor = Color.Blue,
+                            cursorColor = Green30,
+                            focusedBorderColor = Green30,
                             unfocusedBorderColor = Color.Gray
                         ),
-                        textStyle = TextStyle(Color.Blue, 18.sp),
+                        textStyle = TextStyle(color = Color.Black, fontSize = 18.sp),
                         maxLines = 1,
                         singleLine = true,
                         modifier = Modifier
@@ -149,11 +149,11 @@ fun CalculadoraImcScreen(navHostController: NavHostController){
                             Text(text = "Altura (cm)")
                         },
                         colors = TextFieldDefaults.outlinedTextFieldColors(
-                            cursorColor = Color.Blue,
-                            focusedBorderColor = Color.Blue,
+                            cursorColor = Green30,
+                            focusedBorderColor = Green30,
                             unfocusedBorderColor = Color.Gray
                         ),
-                        textStyle = TextStyle(Color.Blue, 18.sp),
+                        textStyle = TextStyle(color = Color.Black, fontSize = 18.sp),
                         maxLines = 1,
                         singleLine = true,
                         modifier = Modifier

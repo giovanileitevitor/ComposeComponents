@@ -9,7 +9,7 @@ class CalcularImc {
     fun calcularImc(peso: String, altura: String){
 
         val pesoConvertido = peso.toDouble()
-        val alturaConvertido = altura.toDouble()
+        val alturaConvertido = altura.toDouble() / 100
         val resultado: String
 
         val imc = pesoConvertido / ( alturaConvertido * alturaConvertido )
