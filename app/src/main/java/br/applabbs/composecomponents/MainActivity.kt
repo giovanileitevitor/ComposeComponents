@@ -10,7 +10,11 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import br.applabbs.composecomponents.ui.theme.ComposeComponentsTheme
+import br.applabbs.composecomponents.ui.theme.calcImc.CalculadoraImcScreen
 import br.applabbs.composecomponents.ui.theme.home.HomeApp
+import br.applabbs.composecomponents.ui.theme.home.Routes
+import br.applabbs.composecomponents.ui.theme.instagramNews.InstagramNewsScreen
+import br.applabbs.composecomponents.ui.theme.notes.NotepadScreen
 import br.applabbs.composecomponents.ui.theme.swipeEffect.SwipeEffectCardScreen
 
 
@@ -35,13 +39,22 @@ fun Home() {
 fun NavHostImpl(navController: NavHostController){
     NavHost(
         navController = navController,
-        startDestination = "Home"
+        startDestination = Routes.HOME
     ){
-        composable("home"){
+        composable(Routes.HOME){
             HomeApp(navHostController = navController)
         }
-        composable("swipe_effect_card"){
+        composable(Routes.SWIPE_EFECT){
             SwipeEffectCardScreen(navHostController = navController)
+        }
+        composable(Routes.CALC_IMC){
+            CalculadoraImcScreen(navHostController = navController)
+        }
+        composable(Routes.NOTES){
+            NotepadScreen(navHostController = navController)
+        }
+        composable(Routes.INSTAGRAM_NEWS){
+            InstagramNewsScreen(navHostController = navController)
         }
 
         //implement other composable itens

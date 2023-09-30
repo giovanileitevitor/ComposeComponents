@@ -14,13 +14,11 @@ import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.rememberNavController
 import br.applabbs.composecomponents.ui.theme.Green30
-import br.applabbs.composecomponents.ui.theme.Green90
 import com.alexstyl.swipeablecard.Direction
 import com.alexstyl.swipeablecard.ExperimentalSwipeableCardApi
 import com.alexstyl.swipeablecard.rememberSwipeableCardState
@@ -34,11 +32,7 @@ fun SwipeEffectCardScreen(navHostController: NavHostController){
         modifier = Modifier
             .fillMaxSize()
             .systemBarsPadding()
-            .background(
-                brush = Brush.verticalGradient(
-                    colors = listOf(Green30, Green90)
-                )
-            )
+            .background(color = Green30)
     ){
 
         Box(

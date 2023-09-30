@@ -26,8 +26,10 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.input.nestedscroll.nestedScroll
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.text.style.TextAlign
+import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavHostController
+import androidx.navigation.compose.rememberNavController
 import br.applabbs.composecomponents.ui.theme.Green30
 
 @OptIn(ExperimentalMaterial3Api::class)
@@ -47,7 +49,7 @@ fun HomeApp(navHostController: NavHostController){
                     Text(
                         text = "Compose Components",
                         textAlign = TextAlign.Justify,
-                        fontSize = 18.sp,
+                        fontSize = 22.sp,
                         maxLines = 1
                     )
                 },
@@ -65,7 +67,8 @@ fun HomeApp(navHostController: NavHostController){
                     ) {
                         Icon(
                             imageVector = Icons.Default.MoreVert,
-                            contentDescription = "Open Options"
+                            contentDescription = "Open Options",
+                            tint = Color.White
                         )
                     }
                 }
@@ -79,9 +82,27 @@ fun HomeApp(navHostController: NavHostController){
                 .padding(paddingValues = paddingValues)
         ) {
             CustomCard(description = "Swipe effect (or parallax effect)", status = "Last Update: 28/Sep/2023") {
-                navHostController.navigate("swipe_effect_card")
+                navHostController.navigate(Routes.SWIPE_EFECT)
             }
+
+            CustomCard(description = "Calc IMC (IMC = Peso / Altura x Altura)", status = "Last Update: 29/Sep/2023") {
+                navHostController.navigate(Routes.CALC_IMC)
+            }
+
+            CustomCard(description = "Bloco de Notas (with DataStore)", status = "Last Update: 20/Sep/2023") {
+                navHostController.navigate(Routes.NOTES)
+            }
+
+            CustomCard(description = "Instagram News ", status = "Last Update: 30/Sep/2023") {
+                navHostController.navigate(Routes.INSTAGRAM_NEWS)
+            }
+
         }
     }
+}
 
+@Preview
+@Composable
+fun PreviewHome(){
+    HomeApp(navHostController = rememberNavController())
 }
