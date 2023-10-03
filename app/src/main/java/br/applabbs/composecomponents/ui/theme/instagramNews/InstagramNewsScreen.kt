@@ -13,7 +13,13 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.lazy.LazyRow
 import androidx.compose.foundation.shape.CircleShape
+import androidx.compose.material3.ExperimentalMaterial3Api
+import androidx.compose.material3.Icon
+import androidx.compose.material3.IconButton
+import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
+import androidx.compose.material3.TopAppBar
+import androidx.compose.material3.TopAppBarDefaults
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableIntStateOf
@@ -32,19 +38,60 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.rememberNavController
+import br.applabbs.composecomponents.R
+import br.applabbs.composecomponents.ui.theme.Green30
 import br.applabbs.composecomponents.ui.theme.Green90
+import br.applabbs.composecomponents.ui.theme.home.Routes
 
+@OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun InstagramNewsScreen(navHostController: NavHostController){
-    Box(
-        modifier = Modifier
-            .background(Color.White)
-            .fillMaxSize()
-    ){
-        Column {
-            ChipSection(
-                cards = cards
+
+    Scaffold(
+        topBar = {
+            TopAppBar(
+                title = {
+                    Text(
+                        text = "Instagram Cards",
+                        textAlign = TextAlign.Justify,
+                        fontSize = 22.sp,
+                        maxLines = 1,
+                        color = Color.White
+                    )
+                },
+                colors = TopAppBarDefaults.largeTopAppBarColors(
+                    containerColor = Green30,
+                    titleContentColor = Color.White
+                ),
+                navigationIcon = {
+                    IconButton(
+                        onClick = {
+                            navHostController.navigate(Routes.HOME)
+                        }
+                    ) {
+                        Icon(
+                            painter = painterResource(id = R.drawable.ic_back),
+                            contentDescription = "Voltar",
+                            tint = Color.White
+                        )
+                    }
+                }
             )
+        },
+        modifier = Modifier
+    ){ paddingValues ->
+
+        Box(
+            modifier = Modifier
+                .background(Color.White)
+                .fillMaxSize()
+                .padding(paddingValues = paddingValues)
+        ){
+            Column {
+                ChipSection(
+                    cards = cards
+                )
+            }
         }
     }
 }
