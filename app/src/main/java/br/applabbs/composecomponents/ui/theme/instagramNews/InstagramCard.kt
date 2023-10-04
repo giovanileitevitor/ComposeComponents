@@ -9,6 +9,11 @@ data class InstagramCard(
     @DrawableRes val cardImage: Int
 )
 
+data class InstagramCardInternet(
+    val cardName: String,
+    val cardImageUrl: String
+)
+
 val cards = listOf(
     InstagramCard("Berlim", R.drawable.ic_city_1),
     InstagramCard("New York", R.drawable.ic_city_2),
@@ -22,4 +27,14 @@ val cards = listOf(
     InstagramCard("Londres", R.drawable.ic_city_4),
     InstagramCard("São Paulo", R.drawable.ic_city_1),
     InstagramCard("Roma", R.drawable.ic_city_2),
+)
+
+val cardsInternet = listOf(
+    InstagramCardInternet("Berlim", "https://source.unsplash.com/random/200x200?sig=1"),
+    InstagramCardInternet("Roma", "https://source.unsplash.com/random/200x200?sig=2"),
+    InstagramCardInternet("Manaus", "https://source.unsplash.com/random/200x200?sig=3"),
+    InstagramCardInternet("São Paulo", "https://source.unsplash.com/random/200x200?sig=4"),
+    InstagramCardInternet("Juazeiro", "https://source.unsplash.com/random/200x200?sig=5"),
+    InstagramCardInternet("Nova York", "https://source.unsplash.com/random/200x200?sig=6"),
+    InstagramCardInternet("Londres", "https://source.unsplash.com/random/200x200?sig=7"),
 )

@@ -44,7 +44,6 @@ fun CustomCard(description: String, status: String, onClick: () -> Unit){
                     )
                 )
             ) {
-
                 Text(
                     text = status,
                     textAlign = TextAlign.End,
@@ -70,8 +69,12 @@ fun CustomCard(description: String, status: String, onClick: () -> Unit){
 @Preview
 @Composable
 fun PreviewCustomCard(){
+
     val date = SimpleDateFormat("dd-MM-yyyy'")
     val currentDateAndTime = date.format(Date())
-
-    CustomCard(description = "Custom Card", status = currentDateAndTime, onClick = { } )
+    CustomCard(
+        description = "Custom Card",
+        status = currentDateAndTime,
+        onClick = { }
+    )
 }
