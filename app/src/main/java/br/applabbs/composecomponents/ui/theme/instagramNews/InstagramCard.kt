@@ -16,7 +16,7 @@ val cards = listOf(
     InstagramCard("Londres", R.drawable.ic_city_4),
     InstagramCard("São Paulo", R.drawable.ic_city_1),
     InstagramCard("Roma", R.drawable.ic_city_2),
-    InstagramCard("Rio de Janeiro", R.drawable.ic_city_3),
+    InstagramCard("Rio de Janeiro de 2023", R.drawable.ic_city_3),
     InstagramCard("Washington", R.drawable.ic_city_4),
     InstagramCard("Adelaide", R.drawable.ic_city_3),
     InstagramCard("Londres", R.drawable.ic_city_4),

@@ -7,9 +7,12 @@ import androidx.compose.foundation.border
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.fillMaxHeight
 import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.lazy.LazyRow
 import androidx.compose.foundation.shape.CircleShape
@@ -33,6 +36,7 @@ import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.style.TextAlign
+import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
@@ -105,14 +109,15 @@ private fun ChipSection(
 
     LazyRow {
         items(cards.size) {
-            Box(
+            Column(
                 modifier = Modifier.padding(0.dp),
-                contentAlignment = Alignment.Center
+                horizontalAlignment = Alignment.CenterHorizontally
             ){
-                Box(
-                    contentAlignment = Alignment.Center,
+                Column(
+                    horizontalAlignment = Alignment.CenterHorizontally,
                     modifier = Modifier
-                        .padding(start = 15.dp, top = 15.dp, bottom = 15.dp, end = 5.dp)
+                        .padding(start = 10.dp, top = 10.dp, bottom = 5.dp, end = 10.dp)
+                        .size(80.dp)
                         .clickable {
                             selectedChipIndex = it
                             Toast.makeText(context, "City selected: " + "${cards[it].cardName}", Toast.LENGTH_SHORT).show()
@@ -136,13 +141,12 @@ private fun ChipSection(
 
                 Text(
                     text = cards[it].cardName,
-                    textAlign = TextAlign.Justify,
-                    fontSize = 12.sp,
-                    color = Color.White,
+                    textAlign = TextAlign.Center,
+                    fontSize = 14.sp,
+                    color = Color.Black,
                     maxLines = 1,
-                    modifier = Modifier
-                        .align(alignment = Alignment.Center)
-
+                    overflow = TextOverflow.Ellipsis,
+                    modifier = Modifier.width(80.dp)
                 )
             }
         }
