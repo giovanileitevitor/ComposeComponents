@@ -7,5 +7,6 @@ object Routes {
     const val CALC_IMC = "calc_imc"
     const val NOTES = "notes"
     const val INSTAGRAM_NEWS = "instagram_news"
+    const val BOTTOM_MENU = "bottom_menu"
 
 }

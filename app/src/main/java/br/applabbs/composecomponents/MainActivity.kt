@@ -10,6 +10,7 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import br.applabbs.composecomponents.ui.theme.ComposeComponentsTheme
+import br.applabbs.composecomponents.ui.theme.bottomMenu.BottomMenuScreen
 import br.applabbs.composecomponents.ui.theme.calcImc.CalculadoraImcScreen
 import br.applabbs.composecomponents.ui.theme.home.HomeApp
 import br.applabbs.composecomponents.ui.theme.home.Routes
@@ -55,6 +56,9 @@ fun NavHostImpl(navController: NavHostController){
         }
         composable(Routes.INSTAGRAM_NEWS){
             InstagramNewsScreen(navHostController = navController)
+        }
+        composable(Routes.BOTTOM_MENU){
+            BottomMenuScreen(navHostController = navController)
         }
 
         //implement other composable itens

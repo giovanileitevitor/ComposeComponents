@@ -97,6 +97,10 @@ fun HomeApp(navHostController: NavHostController){
                 navHostController.navigate(Routes.INSTAGRAM_NEWS)
             }
 
+            CustomCard(description = "Bottom Menu Customized ", status = "Last Update: 04/Oct/2023") {
+                navHostController.navigate(Routes.BOTTOM_MENU)
+            }
+
         }
     }
 }

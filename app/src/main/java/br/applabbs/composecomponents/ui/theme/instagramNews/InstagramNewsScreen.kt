@@ -137,8 +137,7 @@ fun InstagramNewsScreen(navHostController: NavHostController){
                     }
                 },
             )
-        },
-        modifier = Modifier
+        }
     ){ paddingValues ->
 
         Box(
