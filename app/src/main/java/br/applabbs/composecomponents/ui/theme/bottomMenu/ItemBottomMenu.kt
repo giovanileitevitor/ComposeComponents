@@ -9,9 +9,9 @@ data class ItemBottomMenu(
 )
 
 val itens = listOf<ItemBottomMenu>(
-    ItemBottomMenu("Home", R.drawable.ic_home),
-    ItemBottomMenu("Meditate", R.drawable.ic_bubble),
-    ItemBottomMenu("Sleep", R.drawable.ic_moon),
-    ItemBottomMenu("Music", R.drawable.ic_music),
-    ItemBottomMenu("Profile", R.drawable.ic_profile),
+    ItemBottomMenu("Início", R.drawable.ic_home),
+    ItemBottomMenu("Minha rede", R.drawable.ic_network),
+    ItemBottomMenu("Publicar", R.drawable.ic_publicar),
+    ItemBottomMenu("Notificações", R.drawable.ic_notificar),
+    ItemBottomMenu("Vagas", R.drawable.ic_vagas),
 )

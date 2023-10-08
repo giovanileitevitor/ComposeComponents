@@ -26,11 +26,10 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import androidx.compose.ui.unit.sp
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.rememberNavController
 import br.applabbs.composecomponents.ui.theme.AquaBlue
-import br.applabbs.composecomponents.ui.theme.ButtonBlue
-import br.applabbs.composecomponents.ui.theme.DeepBlue
 import br.applabbs.composecomponents.ui.theme.Green30
 import br.applabbs.composecomponents.ui.theme.Green90
 
@@ -70,7 +69,7 @@ fun BottomMenu(
         modifier = modifier
             .fillMaxWidth()
             .background(Green30)
-            .padding(15.dp)
+            .padding(top = 6.dp, bottom = 6.dp)
     ){
 
         itensMenu.forEachIndexed { index, itemBottomMenu ->
@@ -119,6 +118,7 @@ fun BottomMenuItem(
         }
         Text(
             text = item.itemTitle,
+            fontSize = 10.sp,
             color = if(isSelected) activeTextColor else inactiveTextColor
         )
     }

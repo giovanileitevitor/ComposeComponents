@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">ComposeComponents</string>
+    <string name="textA">Text with letter A</string>
+    <string name="textB">Text with letter B</string>
 </resources>
