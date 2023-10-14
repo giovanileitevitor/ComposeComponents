@@ -2,6 +2,10 @@ package br.applabbs.composecomponents.ui.theme.instagramNews
 
 import android.view.RoundedCorner
 import android.widget.Toast
+import androidx.compose.animation.graphics.ExperimentalAnimationGraphicsApi
+import androidx.compose.animation.graphics.res.animatedVectorResource
+import androidx.compose.animation.graphics.res.rememberAnimatedVectorPainter
+import androidx.compose.animation.graphics.vector.AnimatedImageVector
 import androidx.compose.foundation.ExperimentalFoundationApi
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
@@ -45,7 +49,9 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.graphics.painter.Painter
 import androidx.compose.ui.graphics.vector.ImageVector
+import androidx.compose.ui.graphics.vector.rememberVectorPainter
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.painterResource
@@ -104,18 +110,22 @@ fun InstagramNewsScreen(navHostController: NavHostController){
                 },
                 actions = {
                     BadgedBox(
-                        modifier = Modifier.size(40.dp).padding(end = 14.dp),
+                        modifier = Modifier
+                            .size(40.dp)
+                            .padding(end = 14.dp),
                         badge = {
                             Badge(
                                 containerColor = Color.Transparent,
                                 modifier = Modifier
                                     .offset(y = 12.dp, x = (-5).dp)
                                     .clickable {
-                                        Toast.makeText(
-                                            context,
-                                            "Total cards: ${cardsInternet.size.toString()}",
-                                            Toast.LENGTH_SHORT
-                                        ).show()
+                                        Toast
+                                            .makeText(
+                                                context,
+                                                "Total cards: ${cardsInternet.size.toString()}",
+                                                Toast.LENGTH_SHORT
+                                            )
+                                            .show()
                                     },
                             ){
                                 Text(
@@ -156,7 +166,7 @@ fun InstagramNewsScreen(navHostController: NavHostController){
     }
 }
 
-@OptIn(ExperimentalFoundationApi::class)
+@OptIn(ExperimentalFoundationApi::class, ExperimentalAnimationGraphicsApi::class)
 @Composable
 private fun ChipSection(
     cards: List<InstagramCard>,
@@ -205,7 +215,10 @@ private fun ChipSection(
                     Image(
                         contentScale = ContentScale.FillBounds,
                         modifier = Modifier.fillMaxSize(),
-                        painter = rememberAsyncImagePainter(cardsInternet[it].cardImageUrl),
+                        painter = rememberAsyncImagePainter(
+                            model = cardsInternet[it].cardImageUrl,
+                            placeholder = painterResource(id = R.drawable.ic_loading)
+                            ),
                         contentDescription = "image"
                     )
                 }
@@ -221,14 +234,6 @@ private fun ChipSection(
                 )
             }
 
-            //Verificar como construir esse dialog
-//            CustomDialog(
-//                instagramCard = cardsInternet[it],
-//                showDialog = remember { mutableStateOf(showDialog)},
-//                onDismiss = {
-//                    showDialog = false
-//                }
-//            )
         }
     }
 }

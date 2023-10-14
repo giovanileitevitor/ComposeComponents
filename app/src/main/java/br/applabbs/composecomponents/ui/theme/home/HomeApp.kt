@@ -100,6 +100,9 @@ fun HomeApp(navHostController: NavHostController){
             CustomCard(description = "Bottom Menu Customized ", status = "Last Update: 04/Oct/2023") {
                 navHostController.navigate(Routes.BOTTOM_MENU)
             }
+            CustomCard(description = "Busca CEP ", status = "Last Update: 13/Oct/2023") {
+                navHostController.navigate(Routes.BUSCA_CEP)
+            }
 
         }
     }
