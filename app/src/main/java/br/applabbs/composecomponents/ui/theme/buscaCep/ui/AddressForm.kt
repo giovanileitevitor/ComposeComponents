@@ -29,7 +29,6 @@ import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.tooling.preview.Preview
@@ -46,7 +45,8 @@ fun AddressForm(
     onSearchAddressClick: (String) -> Unit,
     modifier: Modifier = Modifier,
 ){
-    val context = LocalContext.current
+
+    var cep by remember { mutableStateOf("") }
 
     Column(
         modifier = modifier.fillMaxSize()
@@ -81,125 +81,138 @@ fun AddressForm(
         }
 
         Column(
-            modifier = Modifier
-                .verticalScroll(rememberScrollState())
-                .padding(8.dp),
+            modifier = Modifier.verticalScroll(rememberScrollState()),
             verticalArrangement = Arrangement.spacedBy(8.dp)
         ) {
 
-            val addressTextFieldModifier = Modifier.fillMaxWidth()
-            var cep by remember { mutableStateOf("") }
+            OutlinedTextField(
+                value = cep,
+                onValueChange = { it ->
+                    cep = it.filter { it.isDigit() }
+                },
+                label = {
+                    Text(text = "CEP (xxxxx-xxx)")
+                },
+                colors = TextFieldDefaults.outlinedTextFieldColors(
+                    cursorColor = Green30,
+                    focusedBorderColor = Green30,
+                    unfocusedBorderColor = Color.Gray
+                ),
+                textStyle = TextStyle(color = Color.Black, fontSize = 18.sp),
+                maxLines = 1,
+                singleLine = true,
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .padding(start = 10.dp, end = 10.dp, bottom = 10.dp, top = 20.dp),
+                keyboardOptions = KeyboardOptions(
+                    keyboardType = KeyboardType.Number
+                ),
+                visualTransformation = MaskTransformation(),
+                trailingIcon = {
+                    Icon(
+                        imageVector = Icons.Default.Search,
+                        contentDescription = "search button",
+                        modifier = Modifier.clickable {
+                            onSearchAddressClick(cep)
+                        }
+                    )
+                },
+            )
 
-            Row(
-                Modifier.fillMaxWidth(),
-                verticalAlignment = Alignment.CenterVertically
-            ) {
-                OutlinedTextField(
-                    value = cep,
-                    onValueChange = { it ->
-                        cep = it.filter { it.isDigit() }
-                    },
-                    label = {
-                        Text(text = "CEP (xxxxx-xxx)")
-                    },
-                    colors = TextFieldDefaults.outlinedTextFieldColors(
-                        cursorColor = Green30,
-                        focusedBorderColor = Green30,
-                        unfocusedBorderColor = Color.Gray
-                    ),
-                    textStyle = TextStyle(color = Color.Black, fontSize = 18.sp),
-                    maxLines = 1,
-                    singleLine = true,
-                    modifier = Modifier
-                        .fillMaxWidth()
-                        .padding(start = 10.dp, end = 10.dp, bottom = 10.dp, top = 20.dp),
-                    keyboardOptions = KeyboardOptions(
-                        keyboardType = KeyboardType.Number
-                    ),
-                    visualTransformation = MaskTransformation(),
-                    trailingIcon = {
-                        Icon(
-                            imageVector = Icons.Default.Search,
-                            contentDescription = "search button",
-                            modifier = Modifier.clickable {
-                                //Toast.makeText(context, "start search with cep: $cep", Toast.LENGTH_SHORT).show()
-                                onSearchAddressClick(cep)
-                            }
-                        )
-                    },
-                )
-            }
+            Form(
+                form = uiState
+            )
 
-            var logradouro by remember(uiState.logradouro) {
-                mutableStateOf(uiState.logradouro)
-            }
-            TextField(
-                value = logradouro,
-                onValueChange = {
-                    logradouro = it
-                },
-                addressTextFieldModifier,
-                label = {
-                    Text(text = "Logradouro")
-                }
-            )
-            var numero by remember {
-                mutableStateOf("")
-            }
-            TextField(
-                value = numero,
-                onValueChange = {
-                    numero = it
-                },
-                addressTextFieldModifier,
-                label = {
-                    Text(text = "Número")
-                }
-            )
-            var bairro by remember(uiState.bairro) {
-                mutableStateOf(uiState.bairro)
-            }
-            TextField(
-                value = bairro,
-                onValueChange = {
-                    bairro = it
-                },
-                addressTextFieldModifier,
-                label = {
-                    Text(text = "Bairro")
-                }
-            )
-            var cidade by remember(uiState.cidade) {
-                mutableStateOf(uiState.cidade)
-            }
-            TextField(
-                value = cidade,
-                onValueChange = {
-                    cidade = it
-                },
-                addressTextFieldModifier,
-                label = {
-                    Text(text = "Cidade")
-                }
-            )
-            var estado by remember(uiState.estado) {
-                mutableStateOf(uiState.estado)
-            }
-            TextField(
-                value = estado,
-                onValueChange = {
-                    estado = it
-                },
-                addressTextFieldModifier,
-                label = {
-                    Text(text = "Estado")
-                }
-            )
         }
     }
 }
 
-@Preview
+@OptIn(ExperimentalMaterial3Api::class)
+@Composable
+fun Form(form: AddressFormUiState){
+
+    val addressTextFieldModifier = Modifier.fillMaxWidth()
+    var logradouro by remember(form.logradouro) { mutableStateOf(form.logradouro) }
+    var bairro by remember(form.bairro) { mutableStateOf(form.bairro) }
+    var estado by remember(form.estado) { mutableStateOf(form.estado) }
+    var numero by remember { mutableStateOf(form.complemento) }
+    var cidade by remember(form.cidade) { mutableStateOf(form.cidade) }
+    var ddd by remember(form.ddd) { mutableStateOf(form.ddd) }
+
+    Column(
+        modifier = Modifier.fillMaxSize()
+            .padding(start = 10.dp, end = 10.dp, bottom = 10.dp, top = 10.dp),
+    ) {
+        TextField(
+            value = logradouro,
+            onValueChange = {
+                logradouro = it
+            },
+            addressTextFieldModifier,
+            label = {
+                Text(text = "Logradouro")
+            }
+        )
+
+        TextField(
+            value = numero,
+            onValueChange = {
+                numero = it
+            },
+            addressTextFieldModifier,
+            label = {
+                Text(text = "Número")
+            }
+        )
+
+        TextField(
+            value = bairro,
+            onValueChange = {
+                bairro = it
+            },
+            addressTextFieldModifier,
+            label = {
+                Text(text = "Bairro")
+            }
+        )
+
+        TextField(
+            value = cidade,
+            onValueChange = {
+                cidade = it
+            },
+            addressTextFieldModifier,
+            label = {
+                Text(text = "Cidade")
+            }
+        )
+
+        TextField(
+            value = estado,
+            onValueChange = {
+                estado = it
+            },
+            addressTextFieldModifier,
+            label = {
+                Text(text = "Estado")
+            }
+        )
+
+        TextField(
+            value = ddd,
+            onValueChange = {
+                ddd = it
+            },
+            addressTextFieldModifier,
+            label = {
+                Text(text = "DDD")
+            }
+        )
+    }
+
+}
+
+@Preview(showBackground = true)
 @Composable
 fun PreviewBuscaCepForm(){
     AddressForm(
