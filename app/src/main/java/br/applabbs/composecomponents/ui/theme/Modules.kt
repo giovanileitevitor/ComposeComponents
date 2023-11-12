@@ -1,4 +1,4 @@
-package br.applabbs.composecomponents.ui.theme.di
+package br.applabbs.composecomponents.ui.theme
 
 import br.applabbs.composecomponents.ui.theme.buscaCep.ui.AddressViewModel
 import br.applabbs.composecomponents.ui.theme.buscaCep.repository.AddressRepository
@@ -19,11 +19,15 @@ val appModule = module {
     viewModelOf(::AddressViewModel)
 }
 
+val networkRetrofitModule = module {
+
+}
+
 val networkModule = module {
     single{
         HttpClient(Android){
             install(Logging) {
-                level = LogLevel.ALL
+                level = LogLevel.BODY
             }
             install(ContentNegotiation) {
                 json(Json {

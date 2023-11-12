@@ -1,5 +1,10 @@
 <resources>
     <string name="app_name">ComposeComponents</string>
+    <string name="compose_app_name">Compose Components</string>
     <string name="textA">Text with letter A</string>
     <string name="textB">Text with letter B</string>
+
+    <string name="calculadora_imc">Calculadora de IMC</string>
+    <string name="bloco_notas">Bloco de Notas</string>
+    <string name="instagram_cards">Instagram Cards</string>
 </resources>

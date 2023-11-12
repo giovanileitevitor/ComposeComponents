@@ -1,4 +1,4 @@
-package br.applabbs.composecomponents.ui.theme.di
+package br.applabbs.composecomponents.ui.theme
 
 import android.app.Application
 import org.koin.android.ext.koin.androidContext
@@ -20,7 +20,8 @@ class MainApplication: Application(){
             modules(
                 listOf(
                     appModule,
-                    networkModule
+                    networkModule,
+                    networkRetrofitModule
                 )
             )
         }

@@ -25,11 +25,13 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.input.nestedscroll.nestedScroll
 import androidx.compose.ui.platform.LocalContext
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.rememberNavController
+import br.applabbs.composecomponents.R
 import br.applabbs.composecomponents.ui.theme.Green30
 
 @OptIn(ExperimentalMaterial3Api::class)
@@ -47,7 +49,7 @@ fun HomeApp(navHostController: NavHostController){
             TopAppBar(
                 title = {
                     Text(
-                        text = "Compose Components",
+                        text = stringResource(id = R.string.compose_app_name),
                         textAlign = TextAlign.Justify,
                         fontSize = 22.sp,
                         maxLines = 1
@@ -85,7 +87,7 @@ fun HomeApp(navHostController: NavHostController){
                 navHostController.navigate(Routes.SWIPE_EFECT)
             }
 
-            CustomCard(description = "Calc IMC (IMC = Peso / Altura x Altura)", status = "Last Update: 29/Sep/2023") {
+            CustomCard(description = "Calculadora (IMC = Peso / Altura x Altura)", status = "Last Update: 29/Sep/2023") {
                 navHostController.navigate(Routes.CALC_IMC)
             }
 
@@ -93,14 +95,14 @@ fun HomeApp(navHostController: NavHostController){
                 navHostController.navigate(Routes.NOTES)
             }
 
-            CustomCard(description = "Instagram News ", status = "Last Update: 30/Sep/2023") {
+            CustomCard(description = stringResource(id = R.string.instagram_cards), status = "Last Update: 30/Sep/2023") {
                 navHostController.navigate(Routes.INSTAGRAM_NEWS)
             }
 
             CustomCard(description = "Bottom Menu Customized ", status = "Last Update: 04/Oct/2023") {
                 navHostController.navigate(Routes.BOTTOM_MENU)
             }
-            CustomCard(description = "Busca CEP ", status = "Last Update: 13/Oct/2023") {
+            CustomCard(description = "Busca CEP (MVVM arch *)", status = "Last Update: 13/Oct/2023") {
                 navHostController.navigate(Routes.BUSCA_CEP)
             }
 

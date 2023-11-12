@@ -1,6 +1,7 @@
 plugins {
     id("com.android.application")
     id("org.jetbrains.kotlin.android")
+    id("kotlin-kapt")
     kotlin("plugin.serialization") version "1.9.10"
 }
 
@@ -79,6 +80,8 @@ dependencies {
     implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.6.0")
     implementation("io.insert-koin:koin-android:$koinVersion")
     implementation("io.insert-koin:koin-androidx-compose:$koinVersion")
+    //implementation("com.android.dagger:hilt-android:.44")
+
 
 
     testImplementation("junit:junit:4.13.2")

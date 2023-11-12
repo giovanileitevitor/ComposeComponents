@@ -30,6 +30,7 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.res.vectorResource
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.font.FontWeight
@@ -59,7 +60,7 @@ fun CalculadoraImcScreen(navHostController: NavHostController){
             TopAppBar(
                 title = {
                     Text(
-                        text = "Calculadora de IMC",
+                        text = stringResource(id = R.string.calculadora_imc),
                         textAlign = TextAlign.Justify,
                         fontSize = 22.sp,
                         maxLines = 1,
