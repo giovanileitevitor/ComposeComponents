@@ -7,4 +7,7 @@
     <string name="calculadora_imc">Calculadora de IMC</string>
     <string name="bloco_notas">Bloco de Notas</string>
     <string name="instagram_cards">Instagram Cards</string>
+
+    <string name="blink_on">Blink ON</string>
+    <string name="blink_off">Blink OFF</string>
 </resources>

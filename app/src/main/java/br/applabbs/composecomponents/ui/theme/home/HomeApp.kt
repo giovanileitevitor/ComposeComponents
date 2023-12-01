@@ -105,6 +105,9 @@ fun HomeApp(navHostController: NavHostController){
             CustomCard(description = "Busca CEP (MVVM arch *)", status = "Last Update: 13/Oct/2023") {
                 navHostController.navigate(Routes.BUSCA_CEP)
             }
+            CustomCard(description = "Blink Police", status = "Last Update: 18/Nov/2023") {
+                navHostController.navigate(Routes.BLINK_POLICE)
+            }
 
         }
     }

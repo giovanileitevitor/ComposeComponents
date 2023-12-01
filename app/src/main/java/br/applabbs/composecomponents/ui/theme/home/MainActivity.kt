@@ -12,6 +12,7 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import br.applabbs.composecomponents.ui.theme.ComposeComponentsTheme
+import br.applabbs.composecomponents.ui.theme.blinkPolice.BlinkPoliceScreen
 import br.applabbs.composecomponents.ui.theme.bottomMenu.BottomMenuScreen
 import br.applabbs.composecomponents.ui.theme.buscaCep.ui.BuscaCepScreen
 import br.applabbs.composecomponents.ui.theme.calcImc.CalculadoraImcScreen
@@ -70,6 +71,9 @@ fun NavHostImpl(navController: NavHostController){
         }
         composable(Routes.BUSCA_CEP){
             BuscaCepScreen(navHostController = navController)
+        }
+        composable(Routes.BLINK_POLICE){
+            BlinkPoliceScreen(navHostController = navController)
         }
 
         //implement other composable itens
