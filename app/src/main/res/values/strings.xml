@@ -10,4 +10,6 @@
 
     <string name="blink_on">Blink ON</string>
     <string name="blink_off">Blink OFF</string>
+
+    <string name="add_egister">Add Register $</string>
 </resources>

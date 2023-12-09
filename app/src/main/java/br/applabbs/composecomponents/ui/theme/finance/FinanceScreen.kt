@@ -1,13 +1,9 @@
-package br.applabbs.composecomponents.ui.theme.blinkPolice
+package br.applabbs.composecomponents.ui.theme.finance
 
-import androidx.compose.foundation.background
-import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
-import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.filled.Close
-import androidx.compose.material.icons.filled.PlayArrow
+import androidx.compose.material.icons.filled.Add
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.ExtendedFloatingActionButton
 import androidx.compose.material3.Icon
@@ -17,9 +13,6 @@ import androidx.compose.material3.Text
 import androidx.compose.material3.TopAppBar
 import androidx.compose.material3.TopAppBarDefaults
 import androidx.compose.runtime.Composable
-import androidx.compose.runtime.LaunchedEffect
-import androidx.compose.runtime.mutableStateOf
-import androidx.compose.runtime.remember
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.painterResource
@@ -33,37 +26,26 @@ import androidx.navigation.compose.rememberNavController
 import br.applabbs.composecomponents.R
 import br.applabbs.composecomponents.ui.theme.Green30
 import br.applabbs.composecomponents.ui.theme.home.Routes
-import kotlinx.coroutines.delay
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun BlinkPoliceScreen(navHostController: NavHostController){
-
-    val isAlternate = remember { mutableStateOf(false) }
-    val backgroundColor = remember { mutableStateOf(Color.Red) }
-
+fun FinanceScreen(navHostController: NavHostController){
     Scaffold(
         topBar = {
             TopAppBar(
                 title = {
                     Text(
-                        text = "Pisca Pisca Policia",
+                        text = "Finance Control",
                         textAlign = TextAlign.Justify,
                         fontSize = 22.sp,
                         maxLines = 1,
                         color = Color.White
                     )
                 },
-                colors = if(isAlternate.value){
-                    TopAppBarDefaults.largeTopAppBarColors(
-                        containerColor = Color.Blue,
-                        titleContentColor = Color.White
-                    )} else{
-                    TopAppBarDefaults.largeTopAppBarColors(
-                        containerColor = Color.Red,
-                        titleContentColor = Color.White
-                    )
-                },
+                colors = TopAppBarDefaults.largeTopAppBarColors(
+                    containerColor = Green30,
+                    titleContentColor = Color.White
+                ),
                 actions = {
 
                 },
@@ -85,23 +67,19 @@ fun BlinkPoliceScreen(navHostController: NavHostController){
         floatingActionButton = {
             ExtendedFloatingActionButton(
                 modifier = Modifier.padding(10.dp),
+                containerColor = Green30,
                 onClick = {
-                    isAlternate.value = !isAlternate.value
+                    
                 },
                 icon = {
-                    if(isAlternate.value){
-                        Icon(Icons.Filled.Close, "Stop Blink")
-                    } else{
-                        Icon(Icons.Filled.PlayArrow, "Start Blink")
-                    }
+                    Icon(Icons.Filled.Add, "Add register")
                 },
                 text = {
-                    Text(text = if(!isAlternate.value){
-                        stringResource(id = R.string.blink_on)
-                    } else {
-                        stringResource(id = R.string.blink_off)
-                    })
-                },
+                    Text(
+                        text = stringResource(id = R.string.add_egister),
+                        color = Color.White
+                    )
+                }
             )
         }
     ){ paddingValues ->
@@ -110,33 +88,14 @@ fun BlinkPoliceScreen(navHostController: NavHostController){
             modifier = Modifier.padding(paddingValues = paddingValues)
         ){
 
-            Box(
-                modifier = Modifier
-                    .fillMaxSize()
-                    .background(backgroundColor.value)
-            )
 
-            LaunchedEffect(isAlternate.value) {
-                if (isAlternate.value) {
-                    while (true) {
-                        backgroundColor.value = if (backgroundColor.value == Color.Red) {
-                            Color.Blue
-                        } else {
-                            Color.Red
-                        }
-
-                        delay(200)
-                    }
-                }
-            }
         }
 
     }
-
 }
 
 @Preview
 @Composable
-fun PreviewBlinkPolice(){
-    BlinkPoliceScreen(navHostController = rememberNavController())
+fun PreviewFinanceScreen(){
+    FinanceScreen(navHostController = rememberNavController())
 }

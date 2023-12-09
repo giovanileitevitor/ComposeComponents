@@ -102,11 +102,17 @@ fun HomeApp(navHostController: NavHostController){
             CustomCard(description = "Bottom Menu Customized ", status = "Last Update: 04/Oct/2023") {
                 navHostController.navigate(Routes.BOTTOM_MENU)
             }
+
             CustomCard(description = "Busca CEP (MVVM arch *)", status = "Last Update: 13/Oct/2023") {
                 navHostController.navigate(Routes.BUSCA_CEP)
             }
+
             CustomCard(description = "Blink Police", status = "Last Update: 18/Nov/2023") {
                 navHostController.navigate(Routes.BLINK_POLICE)
+            }
+
+            CustomCard(description = "Controle Gastos", status = "Last Update: 01/Dez/2023") {
+                navHostController.navigate(Routes.FINANCE_CONTROL)
             }
 
         }

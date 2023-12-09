@@ -10,5 +10,6 @@ object Routes {
     const val BOTTOM_MENU = "bottom_menu"
     const val BUSCA_CEP = "busca_cep"
     const val BLINK_POLICE = "blink_police"
+    const val FINANCE_CONTROL = "finance_control"
 
 }
