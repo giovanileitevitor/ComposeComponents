@@ -16,7 +16,8 @@ import br.applabbs.composecomponents.ui.theme.blinkPolice.BlinkPoliceScreen
 import br.applabbs.composecomponents.ui.theme.bottomMenu.BottomMenuScreen
 import br.applabbs.composecomponents.ui.theme.buscaCep.ui.BuscaCepScreen
 import br.applabbs.composecomponents.ui.theme.calcImc.CalculadoraImcScreen
-import br.applabbs.composecomponents.ui.theme.finance.FinanceScreen
+import br.applabbs.composecomponents.ui.theme.experiences.ExperienceScreen
+import br.applabbs.composecomponents.ui.theme.finance.ui.FinanceScreen
 import br.applabbs.composecomponents.ui.theme.instagramNews.InstagramNewsScreen
 import br.applabbs.composecomponents.ui.theme.notes.NotepadScreen
 import br.applabbs.composecomponents.ui.theme.swipeEffect.SwipeEffectCardScreen
@@ -78,6 +79,9 @@ fun NavHostImpl(navController: NavHostController){
         }
         composable(Routes.FINANCE_CONTROL){
             FinanceScreen(navHostController = navController)
+        }
+        composable(Routes.EXPERIENCIAS){
+            ExperienceScreen(navHostController = navController)
         }
 
         //implement other composable itens

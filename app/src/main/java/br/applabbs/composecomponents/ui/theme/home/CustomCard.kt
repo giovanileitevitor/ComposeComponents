@@ -66,14 +66,18 @@ fun CustomCard(description: String, status: String, onClick: () -> Unit){
     )
 }
 
-@Preview
+@Preview(
+    name = "MeuComopnentePreview",
+    showBackground = true,
+    backgroundColor = 0xFFBDCBDB,
+)
 @Composable
-fun PreviewCustomCard(){
+internal fun MeuComopnentePreview(){
 
     val date = SimpleDateFormat("dd-MM-yyyy'")
     val currentDateAndTime = date.format(Date())
     CustomCard(
-        description = "Custom Card",
+        description = "Meu Componente",
         status = currentDateAndTime,
         onClick = { }
     )

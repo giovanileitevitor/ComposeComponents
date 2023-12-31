@@ -1,4 +1,4 @@
-package br.applabbs.composecomponents.ui.theme.buscaCep.repository
+package br.applabbs.composecomponents.ui.theme.buscaCep.data
 
 import br.applabbs.composecomponents.ui.theme.buscaCep.ui.AddressFormUiState
 import com.google.gson.annotations.SerializedName

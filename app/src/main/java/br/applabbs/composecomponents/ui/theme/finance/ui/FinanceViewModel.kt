@@ -1,20 +1,19 @@
-package br.applabbs.composecomponents.ui.theme.buscaCep.ui
+package br.applabbs.composecomponents.ui.theme.finance.ui
 
-import android.util.Log
 import androidx.lifecycle.ViewModel
-import br.applabbs.composecomponents.ui.theme.buscaCep.data.AddressRepository
+import br.applabbs.composecomponents.ui.theme.finance.data.FinanceRepository
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.flow.update
 
-class AddressViewModel(
-    private val repository: AddressRepository
+class FinanceViewModel(
+    private val repository: FinanceRepository
 ): ViewModel() {
 
-    private val _uiState = MutableStateFlow(AddressFormUiState())
+    private val _uiState = MutableStateFlow(ExpenseUiState())
     val uiState = _uiState.asStateFlow()
 
-    suspend fun findAddress(cep: String){
+    suspend fun getBarData(){
         _uiState.update{
             it.copy(
                 isLoading = true,
@@ -22,12 +21,11 @@ class AddressViewModel(
             )
         }
 
-        _uiState.update{
-            try{
-                repository.findAddress(cep = cep)
-                    .toAddressFormUiState()
+        _uiState.update {
+            try {
+               repository.getBarData()
+                   .toExpenseUiState()
             }catch (t: Throwable){
-                Log.e("AddressViewModel", "findAddress: ", t)
                 _uiState.value.copy(
                     isError = true,
                     isLoading = false

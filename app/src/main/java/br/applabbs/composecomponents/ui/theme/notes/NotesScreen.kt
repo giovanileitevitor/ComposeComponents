@@ -19,6 +19,7 @@ import androidx.compose.material3.TextFieldDefaults
 import androidx.compose.material3.TopAppBar
 import androidx.compose.material3.TopAppBarDefaults
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
@@ -53,6 +54,9 @@ fun NotepadScreen(navHostController: NavHostController){
     val storeNotes = StoreNotes(context = context)
     val scope = rememberCoroutineScope()
     val notesSaved = storeNotes.getNote.collectAsState(initial = "")
+    val notesSaved2 = scope.launch {
+
+    }
 
     anotacao = notesSaved.value
 
@@ -133,6 +137,7 @@ fun NotepadScreen(navHostController: NavHostController){
             )
         }
     }
+
 }
 
 @Preview

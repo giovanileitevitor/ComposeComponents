@@ -7,6 +7,7 @@ import androidx.datastore.preferences.core.edit
 import androidx.datastore.preferences.core.stringPreferencesKey
 import androidx.datastore.preferences.preferencesDataStore
 import kotlinx.coroutines.flow.Flow
+import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.flow.map
 
 class StoreNotes(private val context: Context) {
@@ -27,7 +28,8 @@ class StoreNotes(private val context: Context) {
     }
 
     suspend fun getNote(): String{
-        return ""
+        val preferences = context.datStore.data.first()
+        return preferences[ANOTATION_KEY] ?: ""
     }
 
 }

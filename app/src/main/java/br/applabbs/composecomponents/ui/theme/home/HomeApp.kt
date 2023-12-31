@@ -115,6 +115,10 @@ fun HomeApp(navHostController: NavHostController){
                 navHostController.navigate(Routes.FINANCE_CONTROL)
             }
 
+            CustomCard(description = "Pagina de experiencias", status = "Last Update: 31/Dez/2023") {
+                navHostController.navigate(Routes.EXPERIENCIAS)
+            }
+
         }
     }
 }

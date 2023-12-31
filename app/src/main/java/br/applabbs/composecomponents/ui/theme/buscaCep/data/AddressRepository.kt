@@ -1,4 +1,4 @@
-package br.applabbs.composecomponents.ui.theme.buscaCep.repository
+package br.applabbs.composecomponents.ui.theme.buscaCep.data
 
 import io.ktor.client.HttpClient
 import io.ktor.client.call.body
