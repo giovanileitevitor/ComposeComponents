@@ -82,43 +82,83 @@ fun HomeApp(navHostController: NavHostController){
                 .verticalScroll(rememberScrollState())
                 .padding(paddingValues = paddingValues)
         ) {
-            CustomCard(description = "Swipe effect (or parallax effect)", status = "Last Update: 28/Sep/2023") {
+            CustomCard(
+                description = "Swipe effect (or parallax effect)",
+                statusMessage = "Last Update: 28/Sep/2023",
+                statusType = StatusType.COMPLETED
+            ) {
                 navHostController.navigate(Routes.SWIPE_EFECT)
             }
 
-            CustomCard(description = "Calculadora (IMC = Peso / Altura x Altura)", status = "Last Update: 29/Sep/2023") {
+            CustomCard(
+                description = "Calculadora (IMC = Peso / Altura x Altura)",
+                statusMessage = "Last Update: 29/Sep/2023",
+                statusType = StatusType.COMPLETED
+                ) {
                 navHostController.navigate(Routes.CALC_IMC)
             }
 
-            CustomCard(description = "Bloco de Notas (with DataStore)", status = "Last Update: 20/Sep/2023") {
+            CustomCard(
+                description = "Bloco de Notas (with DataStore)",
+                statusMessage = "Last Update: 20/Sep/2023",
+                statusType = StatusType.COMPLETED
+            ) {
                 navHostController.navigate(Routes.NOTES)
             }
 
-            CustomCard(description = stringResource(id = R.string.instagram_cards), status = "Last Update: 30/Sep/2023") {
+            CustomCard(
+                description = stringResource(id = R.string.instagram_cards),
+                statusMessage = "Last Update: 30/Sep/2023",
+                statusType = StatusType.COMPLETED
+            ) {
                 navHostController.navigate(Routes.INSTAGRAM_NEWS)
             }
 
-            CustomCard(description = "Bottom Menu Customized ", status = "Last Update: 04/Oct/2023") {
+            CustomCard(
+                description = "Bottom Menu Customized ",
+                statusMessage = "Last Update: 04/Oct/2023",
+                statusType = StatusType.COMPLETED
+            ) {
                 navHostController.navigate(Routes.BOTTOM_MENU)
             }
 
-            CustomCard(description = "Busca CEP (MVVM arch *)", status = "Last Update: 13/Oct/2023") {
+            CustomCard(
+                description = "Busca CEP (MVVM arch *)",
+                statusMessage = "Last Update: 13/Oct/2023",
+                statusType = StatusType.COMPLETED
+            ) {
                 navHostController.navigate(Routes.BUSCA_CEP)
             }
 
-            CustomCard(description = "Blink Police", status = "Last Update: 18/Nov/2023") {
+            CustomCard(
+                description = "Blink Police",
+                statusMessage = "Last Update: 18/Nov/2023",
+                statusType = StatusType.COMPLETED
+            ) {
                 navHostController.navigate(Routes.BLINK_POLICE)
             }
 
-            CustomCard(description = "Controle Gastos", status = "Last Update: 01/Dez/2023") {
+            CustomCard(
+                description = "Controle Gastos - Em Desenvolvimento",
+                statusMessage = "Last Update: 01/Dez/2023",
+                statusType = StatusType.WITH_ERROR
+            ) {
                 navHostController.navigate(Routes.FINANCE_CONTROL)
             }
 
-            CustomCard(description = "Pagina de experiencias", status = "Last Update: 31/Dez/2023") {
+            CustomCard(
+                description = "Pagina de experiencias",
+                statusMessage = "Last Update: 31/Dez/2023",
+                statusType = StatusType.UNDER_DEV
+            ) {
                 navHostController.navigate(Routes.EXPERIENCIAS)
             }
 
-            CustomCard(description = "Zoom Image", status = "Last Update: 06/Jan/2024") {
+            CustomCard(
+                description = "Zoom Image",
+                statusMessage = "Last Update: 06/Jan/2024",
+                statusType = StatusType.COMPLETED
+            ) {
                 navHostController.navigate(Routes.ZOOM_IMAGE)
             }
 

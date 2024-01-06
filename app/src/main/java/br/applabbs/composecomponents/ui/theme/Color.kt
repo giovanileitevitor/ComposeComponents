@@ -15,3 +15,9 @@ val ButtonBlue = Color(0xff505cf3)
 
 val Green30 = Color(0xFF009688)
 val Green90 = Color(0xFF02C402)
+
+val Red30 = Color(0xFFE9719A)
+val Red90 = Color(0xFFAD1247)
+
+val Yellow30 = Color(0xFFEBE5B1)
+val Yellow90 = Color(0xFFF5DE18)

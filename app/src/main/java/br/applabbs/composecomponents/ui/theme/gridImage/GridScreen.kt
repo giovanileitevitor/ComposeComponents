@@ -28,7 +28,6 @@ import androidx.compose.ui.geometry.Offset
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.input.pointer.pointerInput
 import androidx.compose.ui.layout.ContentScale
-import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
@@ -40,7 +39,6 @@ import androidx.navigation.compose.rememberNavController
 import br.applabbs.composecomponents.R
 import br.applabbs.composecomponents.ui.theme.Green30
 import br.applabbs.composecomponents.ui.theme.home.Routes
-import kotlin.random.Random
 
 @OptIn(ExperimentalFoundationApi::class, ExperimentalMaterial3Api::class)
 @Composable
@@ -124,55 +122,8 @@ fun ZoomScreen(navHostController: NavHostController) {
     }
 }
 
-@Composable
-fun randomColor(): Color {
-    val random = Random
-    return Color(
-        red = random.nextFloat(),
-        green = random.nextFloat(),
-        blue = random.nextFloat(),
-        alpha = 1f
-    )
-}
-
-@Composable
-private fun getScreenSize(): Pair<Int, Int> {
-    val displayMetrics = LocalContext.current.resources.displayMetrics
-    val width = displayMetrics.widthPixels
-    val height = displayMetrics.heightPixels
-    return Pair(width, height)
-}
-
 @Preview(showBackground = true)
 @Composable
 fun PreviewGridScreen(){
     ZoomScreen(navHostController = rememberNavController())
 }
-/*
-    val minWidth = 100.dp
-
-//    Column(modifier = Modifier.fillMaxWidth()) {
-//        for (i in 0 until 20) {
-//            Row(modifier = Modifier.fillMaxWidth()) {
-//                for (j in 0 until 10) {
-//                    Card(
-//                        modifier = Modifier
-//                            .padding(8.dp)
-//                            .size(
-//                                width = (100.dp * (maxWidth / 1000.dp)).coerceAtLeast(minWidth),
-//                                height = minHeight
-//                            ),
-//                        shape = RoundedCornerShape(8.dp),
-//                        elevation = 4.dp
-//                    ) {
-//                        Text(
-//                            text = "Cell ${i}-${j}",
-//                            style = MaterialTheme.typography.body1,
-//                            color = Color.White
-//                        )
-//                    }
-//                }
-//            }
-//        }
-//    }
- */
