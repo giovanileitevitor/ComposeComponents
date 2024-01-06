@@ -1,5 +1,6 @@
 package br.applabbs.composecomponents.ui.theme.home
 
+import android.annotation.SuppressLint
 import android.icu.text.SimpleDateFormat
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
@@ -85,6 +86,7 @@ fun CustomCard(
     )
 }
 
+@SuppressLint("SimpleDateFormat")
 @Preview(
     name = "MeuComopnentePreview",
     showBackground = true,
