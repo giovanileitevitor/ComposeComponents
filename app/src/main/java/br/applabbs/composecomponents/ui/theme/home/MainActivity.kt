@@ -18,7 +18,7 @@ import br.applabbs.composecomponents.ui.theme.buscaCep.ui.BuscaCepScreen
 import br.applabbs.composecomponents.ui.theme.calcImc.CalculadoraImcScreen
 import br.applabbs.composecomponents.ui.theme.experiences.ExperienceScreen
 import br.applabbs.composecomponents.ui.theme.finance.ui.FinanceScreen
-import br.applabbs.composecomponents.ui.theme.gridImage.GridScreen
+import br.applabbs.composecomponents.ui.theme.gridImage.ZoomScreen
 import br.applabbs.composecomponents.ui.theme.instagramNews.InstagramNewsScreen
 import br.applabbs.composecomponents.ui.theme.notes.NotepadScreen
 import br.applabbs.composecomponents.ui.theme.swipeEffect.SwipeEffectCardScreen
@@ -84,8 +84,8 @@ fun NavHostImpl(navController: NavHostController){
         composable(Routes.EXPERIENCIAS){
             ExperienceScreen(navHostController = navController)
         }
-        composable(Routes.GRID_IMAGE){
-            GridScreen(navHostController = navController)
+        composable(Routes.ZOOM_IMAGE){
+            ZoomScreen(navHostController = navController)
         }
 
         //implement other composable itens

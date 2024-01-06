@@ -4,7 +4,6 @@ import android.widget.Toast
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
-import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.material.icons.Icons
@@ -119,8 +118,8 @@ fun HomeApp(navHostController: NavHostController){
                 navHostController.navigate(Routes.EXPERIENCIAS)
             }
 
-            CustomCard(description = "Grid Image", status = "Last Update: 31/Dez/2023") {
-                navHostController.navigate(Routes.GRID_IMAGE)
+            CustomCard(description = "Zoom Image", status = "Last Update: 06/Jan/2024") {
+                navHostController.navigate(Routes.ZOOM_IMAGE)
             }
 
         }

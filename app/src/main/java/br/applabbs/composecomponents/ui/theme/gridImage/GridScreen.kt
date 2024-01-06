@@ -9,7 +9,14 @@ import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.magnifier
+import androidx.compose.material3.ExperimentalMaterial3Api
+import androidx.compose.material3.Icon
+import androidx.compose.material3.IconButton
 import androidx.compose.material3.MaterialTheme
+import androidx.compose.material3.Scaffold
+import androidx.compose.material3.Text
+import androidx.compose.material3.TopAppBar
+import androidx.compose.material3.TopAppBarDefaults
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
@@ -23,53 +30,96 @@ import androidx.compose.ui.input.pointer.pointerInput
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.DpSize
 import androidx.compose.ui.unit.dp
+import androidx.compose.ui.unit.sp
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.rememberNavController
 import br.applabbs.composecomponents.R
+import br.applabbs.composecomponents.ui.theme.Green30
+import br.applabbs.composecomponents.ui.theme.home.Routes
 import kotlin.random.Random
 
-@OptIn(ExperimentalFoundationApi::class)
+@OptIn(ExperimentalFoundationApi::class, ExperimentalMaterial3Api::class)
 @Composable
-fun GridScreen(navHostController: NavHostController) {
+fun ZoomScreen(navHostController: NavHostController) {
 
-    Column(
-        modifier = Modifier.fillMaxWidth()
-    ) {
-        var offset by remember { mutableStateOf(Offset.Zero) }
-        Box(
-            modifier = Modifier
-                .fillMaxWidth()
-                .pointerInput(Unit) {
-                    detectDragGestures { change, _ ->
-                        offset = change.position
+    Scaffold(
+        topBar = {
+            TopAppBar(
+                title = {
+                    Text(
+                        text = "Zoom Screen",
+                        textAlign = TextAlign.Justify,
+                        fontSize = 22.sp,
+                        maxLines = 1,
+                        color = Color.White
+                    )
+                },
+                colors = TopAppBarDefaults.largeTopAppBarColors(
+                    containerColor = Green30,
+                    titleContentColor = Color.White
+                ),
+                actions = {
+
+                },
+                navigationIcon = {
+                    IconButton(
+                        onClick = {
+                            navHostController.navigate(Routes.HOME)
+                        }
+                    ) {
+                        Icon(
+                            painter = painterResource(id = R.drawable.ic_back),
+                            contentDescription = "Voltar",
+                            tint = Color.White
+                        )
                     }
                 }
-                .magnifier(
-                    sourceCenter = {
-                        offset - Offset(x = 50f, y = 50f)
-                    },
-                    zoom = 2F,
-                    magnifierCenter = {
-                        offset- Offset(x = 50f, y = 50f)
-                    },
-                    style = MagnifierStyle(
-                        size = DpSize(100.dp, 100.dp),
-                        cornerRadius = 100.dp
-                    )
-                )
+            )
+        }
+    ) { paddingValues ->
+
+        Column(
+            modifier = Modifier
+                .fillMaxWidth()
+                .padding(paddingValues)
         ) {
-            Image(
-                painter = painterResource(id = R.drawable.ic_city_2),
-                contentDescription = null,
+            var offset by remember { mutableStateOf(Offset.Zero) }
+            Box(
                 modifier = Modifier
                     .fillMaxWidth()
-                    .padding(2.dp)
-                    .clip(shape = MaterialTheme.shapes.medium),
-                contentScale = ContentScale.FillWidth
-            )
+                    .pointerInput(Unit) {
+                        detectDragGestures { change, _ ->
+                            offset = change.position
+                        }
+                    }
+                    .magnifier(
+                        sourceCenter = {
+                            offset - Offset(x = 50f, y = 50f)
+                        },
+                        zoom = 2F,
+                        magnifierCenter = {
+                            offset - Offset(x = 50f, y = 50f)
+                        },
+                        style = MagnifierStyle(
+                            size = DpSize(100.dp, 100.dp),
+                            cornerRadius = 100.dp
+                        )
+                    )
+            ) {
+                Image(
+                    painter = painterResource(id = R.drawable.ic_city_2),
+                    contentDescription = null,
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .padding(2.dp)
+                        .clip(shape = MaterialTheme.shapes.medium),
+                    contentScale = ContentScale.FillWidth
+                )
+            }
         }
     }
 }
@@ -96,7 +146,7 @@ private fun getScreenSize(): Pair<Int, Int> {
 @Preview(showBackground = true)
 @Composable
 fun PreviewGridScreen(){
-    GridScreen(navHostController = rememberNavController())
+    ZoomScreen(navHostController = rememberNavController())
 }
 /*
     val minWidth = 100.dp
