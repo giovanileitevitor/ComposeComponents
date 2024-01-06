@@ -12,5 +12,5 @@ object Routes {
     const val BLINK_POLICE = "blink_police"
     const val FINANCE_CONTROL = "finance_control"
     const val EXPERIENCIAS = "experiencias"
-
+    const val GRID_IMAGE = "grid_image"
 }

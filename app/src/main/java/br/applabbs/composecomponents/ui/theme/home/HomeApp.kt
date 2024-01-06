@@ -119,6 +119,10 @@ fun HomeApp(navHostController: NavHostController){
                 navHostController.navigate(Routes.EXPERIENCIAS)
             }
 
+            CustomCard(description = "Grid Image", status = "Last Update: 31/Dez/2023") {
+                navHostController.navigate(Routes.GRID_IMAGE)
+            }
+
         }
     }
 }
