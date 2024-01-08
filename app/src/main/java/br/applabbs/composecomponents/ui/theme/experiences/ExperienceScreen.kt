@@ -47,7 +47,7 @@ fun ExperienceScreen(navHostController: NavHostController){
 
     val viewModel = viewModel<ExperienceViewModel>()
     val composeColor = viewModel.composeColor
-    val flowColor by viewModel.color.collectAsState()
+    //val flowColor by viewModel.color.collectAsState()
 
     Scaffold(
         topBar = {
