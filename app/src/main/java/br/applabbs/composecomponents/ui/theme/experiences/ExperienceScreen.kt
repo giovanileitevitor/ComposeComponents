@@ -1,5 +1,6 @@
 package br.applabbs.composecomponents.ui.theme.experiences
 
+import android.util.Log
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Box
@@ -17,6 +18,8 @@ import androidx.compose.material3.TopAppBar
 import androidx.compose.material3.TopAppBarDefaults
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.MutableState
+import androidx.compose.runtime.collectAsState
+import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.ui.Alignment
@@ -27,6 +30,7 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.rememberNavController
 import br.applabbs.composecomponents.R
@@ -40,6 +44,10 @@ fun ExperienceScreen(navHostController: NavHostController){
     val red = remember { mutableStateOf(true)}
     val green = remember { mutableStateOf(true)}
     val blue = remember { mutableStateOf(true)}
+
+    val viewModel = viewModel<ExperienceViewModel>()
+    val composeColor = viewModel.composeColor
+    val flowColor by viewModel.color.collectAsState()
 
     Scaffold(
         topBar = {
@@ -101,7 +109,7 @@ fun ExperienceScreen(navHostController: NavHostController){
             Box(
                 modifier = Modifier
                     .fillMaxSize()
-                    .padding(top = 16.dp)
+                    .padding(top = 40.dp)
             ) {
                 if (red.value) {
                     Box(
@@ -114,7 +122,7 @@ fun ExperienceScreen(navHostController: NavHostController){
                     Box(
                         modifier = Modifier
                             .fillMaxSize()
-                            .padding(32.dp)
+                            .padding(48.dp)
                             .background(Color.Green)
                     )
                 }
@@ -122,8 +130,13 @@ fun ExperienceScreen(navHostController: NavHostController){
                     Box(
                         modifier = Modifier
                             .fillMaxSize()
-                            .padding(64.dp)
-                            .background(Color.Blue)
+                            .padding(80.dp)
+                            .background(Color(composeColor))
+                            .clickable {
+                                viewModel.generateNewColor()
+                                val colorString = String.format("#%08X", composeColor)
+                                Log.i("TESTE", colorString)
+                            }
                     )
                 }
             }
