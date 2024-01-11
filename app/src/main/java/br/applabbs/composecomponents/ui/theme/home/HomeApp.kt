@@ -162,6 +162,14 @@ fun HomeApp(navHostController: NavHostController){
                 navHostController.navigate(Routes.ZOOM_IMAGE)
             }
 
+            CustomCard(
+                description = "Bottom Layout",
+                statusMessage = "Last Update: 10/Jan/2024",
+                statusType = StatusType.UNDER_DEV
+            ) {
+                navHostController.navigate(Routes.BOTTOM_LAYOUT)
+            }
+
         }
     }
 }

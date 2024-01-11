@@ -14,6 +14,7 @@ import androidx.navigation.compose.rememberNavController
 import br.applabbs.composecomponents.ui.theme.ComposeComponentsTheme
 import br.applabbs.composecomponents.ui.theme.blinkPolice.BlinkPoliceScreen
 import br.applabbs.composecomponents.ui.theme.bottomMenu.BottomMenuScreen
+import br.applabbs.composecomponents.ui.theme.bottomlayout.BottomLayoutScreen
 import br.applabbs.composecomponents.ui.theme.buscaCep.ui.BuscaCepScreen
 import br.applabbs.composecomponents.ui.theme.calcImc.CalculadoraImcScreen
 import br.applabbs.composecomponents.ui.theme.experiences.ExperienceScreen
@@ -86,6 +87,9 @@ fun NavHostImpl(navController: NavHostController){
         }
         composable(Routes.ZOOM_IMAGE){
             ZoomScreen(navHostController = navController)
+        }
+        composable(Routes.BOTTOM_LAYOUT){
+            BottomLayoutScreen(navHostController = navController)
         }
 
         //implement other composable itens

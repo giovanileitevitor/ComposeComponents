@@ -3,6 +3,12 @@ package br.applabbs.composecomponents.ui.theme.instagramNews
 import androidx.annotation.DrawableRes
 import br.applabbs.composecomponents.R
 
+sealed class UiState{
+    object Loading: UiState()
+    object Error: UiState()
+    object Success: UiState()
+}
+
 
 data class InstagramCard(
     val cardName: String,

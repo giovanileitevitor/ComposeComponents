@@ -1,5 +1,6 @@
 package br.applabbs.composecomponents.ui.theme.instagramNews
 
+import android.view.textclassifier.TextClassifier.NO_OP
 import androidx.annotation.DrawableRes
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.Column
@@ -21,7 +22,11 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 
 @Composable
-fun CustomDialog(instagramCard: InstagramCard, showDialog: MutableState<Boolean>, onDismiss: () -> Unit){
+fun CustomDialog(
+    instagramCard: InstagramCard,
+    showDialog: MutableState<Boolean>,
+    onDismiss: () -> Unit
+){
 
     if(showDialog.value){
         AlertDialog(
@@ -66,5 +71,11 @@ fun CustomDialog(instagramCard: InstagramCard, showDialog: MutableState<Boolean>
 @Preview
 @Composable
 fun PreviewDialog(){
-
+//    CustomDialog(
+//        instagramCard = ,
+//        showDialog = ,
+//        onDismiss = {
+//
+//        }
+//    )
 }

@@ -13,4 +13,5 @@ object Routes {
     const val FINANCE_CONTROL = "finance_control"
     const val EXPERIENCIAS = "experiencias"
     const val ZOOM_IMAGE = "zoom_image"
+    const val BOTTOM_LAYOUT = "bottom_layout"
 }
