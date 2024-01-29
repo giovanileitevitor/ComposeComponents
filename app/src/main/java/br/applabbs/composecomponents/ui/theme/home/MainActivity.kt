@@ -21,6 +21,7 @@ import br.applabbs.composecomponents.ui.theme.experiences.ExperienceScreen
 import br.applabbs.composecomponents.ui.theme.finance.ui.FinanceScreen
 import br.applabbs.composecomponents.ui.theme.gridImage.ZoomScreen
 import br.applabbs.composecomponents.ui.theme.instagramNews.InstagramNewsScreen
+import br.applabbs.composecomponents.ui.theme.livedata.LiveDataScreen
 import br.applabbs.composecomponents.ui.theme.notes.NotepadScreen
 import br.applabbs.composecomponents.ui.theme.swipeEffect.SwipeEffectCardScreen
 
@@ -90,6 +91,9 @@ fun NavHostImpl(navController: NavHostController){
         }
         composable(Routes.BOTTOM_LAYOUT){
             BottomLayoutScreen(navHostController = navController)
+        }
+        composable(Routes.LIVE_DATA){
+            LiveDataScreen(navHostController = navController)
         }
 
         //implement other composable itens

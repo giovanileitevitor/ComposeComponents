@@ -14,4 +14,5 @@ object Routes {
     const val EXPERIENCIAS = "experiencias"
     const val ZOOM_IMAGE = "zoom_image"
     const val BOTTOM_LAYOUT = "bottom_layout"
+    const val LIVE_DATA = "live_data"
 }

@@ -26,7 +26,6 @@ fun maskFilter(text: AnnotatedString): TransformedText {
             if (offset <= 4) return offset
             if (offset <= 8) return offset +1
             return 9
-
         }
 
         override fun transformedToOriginal(offset: Int): Int {

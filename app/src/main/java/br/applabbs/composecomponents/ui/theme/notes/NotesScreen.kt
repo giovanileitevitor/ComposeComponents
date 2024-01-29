@@ -54,9 +54,6 @@ fun NotepadScreen(navHostController: NavHostController){
     val storeNotes = StoreNotes(context = context)
     val scope = rememberCoroutineScope()
     val notesSaved = storeNotes.getNote.collectAsState(initial = "")
-    val notesSaved2 = scope.launch {
-
-    }
 
     anotacao = notesSaved.value
 

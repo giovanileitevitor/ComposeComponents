@@ -170,6 +170,14 @@ fun HomeApp(navHostController: NavHostController){
                 navHostController.navigate(Routes.BOTTOM_LAYOUT)
             }
 
+            CustomCard(
+                description = "LiveData example",
+                statusMessage = "Last Update: 29/Jan/2024",
+                statusType = StatusType.UNDER_DEV
+            ){
+                navHostController.navigate(Routes.LIVE_DATA)
+            }
+
         }
     }
 }
