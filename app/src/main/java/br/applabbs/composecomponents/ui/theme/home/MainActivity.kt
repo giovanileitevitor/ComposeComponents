@@ -21,6 +21,7 @@ import br.applabbs.composecomponents.ui.theme.dialog.DialogScreen
 import br.applabbs.composecomponents.ui.theme.experiences.ExperienceScreen
 import br.applabbs.composecomponents.ui.theme.finance.ui.FinanceScreen
 import br.applabbs.composecomponents.ui.theme.gridImage.ZoomScreen
+import br.applabbs.composecomponents.ui.theme.handlingLists.HandlingListScreen
 import br.applabbs.composecomponents.ui.theme.instagramNews.InstagramNewsScreen
 import br.applabbs.composecomponents.ui.theme.livedata.LiveDataScreen
 import br.applabbs.composecomponents.ui.theme.notes.NotepadScreen
@@ -102,6 +103,9 @@ fun NavHostImpl(navController: NavHostController){
         }
         composable(Routes.DIALOG){
             DialogScreen(navHostController = navController)
+        }
+        composable(Routes.HANDLING_LIST){
+            HandlingListScreen(navHostController = navController)
         }
 
         //implement other composable itens

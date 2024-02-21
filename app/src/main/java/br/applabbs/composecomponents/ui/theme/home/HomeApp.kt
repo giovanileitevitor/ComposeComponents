@@ -91,6 +91,14 @@ fun HomeApp(navHostController: NavHostController){
             }
 
             CustomCard(
+                description = "Handling list and elements",
+                statusMessage = "Last Update: 21/Fev/2024",
+                statusType = StatusType.UNDER_DEV
+            ){
+                navHostController.navigate(Routes.HANDLING_LIST)
+            }
+
+            CustomCard(
                 description = "Swipe effect (or parallax effect)",
                 statusMessage = "Last Update: 28/Sep/2023",
                 statusType = StatusType.COMPLETED

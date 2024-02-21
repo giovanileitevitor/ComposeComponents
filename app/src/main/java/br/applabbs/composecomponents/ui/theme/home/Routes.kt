@@ -17,4 +17,5 @@ object Routes {
     const val LIVE_DATA = "live_data"
     const val VOICE_TEXT = "voice_text"
     const val DIALOG = "dialog"
+    const val HANDLING_LIST = "handling_list"
 }
