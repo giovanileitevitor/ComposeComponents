@@ -85,7 +85,7 @@ fun HomeApp(navHostController: NavHostController){
             CustomCard(
                 description = "Dialog and Custom Dialog",
                 statusMessage = "Last Update: 21/Fev/2024",
-                statusType = StatusType.UNDER_DEV
+                statusType = StatusType.COMPLETED
             ){
                 navHostController.navigate(Routes.DIALOG)
             }
