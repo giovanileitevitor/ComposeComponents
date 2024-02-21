@@ -83,6 +83,14 @@ fun HomeApp(navHostController: NavHostController){
                 .padding(paddingValues = paddingValues)
         ) {
             CustomCard(
+                description = "Dialog and Custom Dialog",
+                statusMessage = "Last Update: 21/Fev/2024",
+                statusType = StatusType.UNDER_DEV
+            ){
+                navHostController.navigate(Routes.DIALOG)
+            }
+
+            CustomCard(
                 description = "Swipe effect (or parallax effect)",
                 statusMessage = "Last Update: 28/Sep/2023",
                 statusType = StatusType.COMPLETED
@@ -173,10 +181,20 @@ fun HomeApp(navHostController: NavHostController){
             CustomCard(
                 description = "LiveData example",
                 statusMessage = "Last Update: 29/Jan/2024",
-                statusType = StatusType.UNDER_DEV
+                statusType = StatusType.COMPLETED
             ){
                 navHostController.navigate(Routes.LIVE_DATA)
             }
+
+            CustomCard(
+                description = "Voice to Text",
+                statusMessage = "Last Update: 06/Fev/2024",
+                statusType = StatusType.UNDER_DEV
+            ){
+                navHostController.navigate(Routes.VOICE_TEXT)
+            }
+
+
 
         }
     }

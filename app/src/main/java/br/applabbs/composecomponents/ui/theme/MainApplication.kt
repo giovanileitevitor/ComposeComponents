@@ -20,6 +20,7 @@ class MainApplication: Application(){
             modules(
                 listOf(
                     appModule,
+                    domainModule,
                     networkModule,
                     networkRetrofitModule
                 )

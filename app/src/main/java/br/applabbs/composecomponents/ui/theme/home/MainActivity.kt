@@ -17,6 +17,7 @@ import br.applabbs.composecomponents.ui.theme.bottomMenu.BottomMenuScreen
 import br.applabbs.composecomponents.ui.theme.bottomlayout.BottomLayoutScreen
 import br.applabbs.composecomponents.ui.theme.buscaCep.ui.BuscaCepScreen
 import br.applabbs.composecomponents.ui.theme.calcImc.CalculadoraImcScreen
+import br.applabbs.composecomponents.ui.theme.dialog.DialogScreen
 import br.applabbs.composecomponents.ui.theme.experiences.ExperienceScreen
 import br.applabbs.composecomponents.ui.theme.finance.ui.FinanceScreen
 import br.applabbs.composecomponents.ui.theme.gridImage.ZoomScreen
@@ -24,6 +25,7 @@ import br.applabbs.composecomponents.ui.theme.instagramNews.InstagramNewsScreen
 import br.applabbs.composecomponents.ui.theme.livedata.LiveDataScreen
 import br.applabbs.composecomponents.ui.theme.notes.NotepadScreen
 import br.applabbs.composecomponents.ui.theme.swipeEffect.SwipeEffectCardScreen
+import br.applabbs.composecomponents.ui.theme.voicetotext.VoiceToTextScreen
 
 
 class MainActivity : ComponentActivity() {
@@ -94,6 +96,12 @@ fun NavHostImpl(navController: NavHostController){
         }
         composable(Routes.LIVE_DATA){
             LiveDataScreen(navHostController = navController)
+        }
+        composable(Routes.VOICE_TEXT){
+            VoiceToTextScreen(navHostController = navController)
+        }
+        composable(Routes.DIALOG){
+            DialogScreen(navHostController = navController)
         }
 
         //implement other composable itens
