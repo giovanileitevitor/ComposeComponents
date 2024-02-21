@@ -91,7 +91,7 @@ fun HomeApp(navHostController: NavHostController){
             }
 
             CustomCard(
-                description = "Handling list and elements",
+                description = "Handling list and elements \n(em desenvolvimento)",
                 statusMessage = "Last Update: 21/Fev/2024",
                 statusType = StatusType.UNDER_DEV
             ){
