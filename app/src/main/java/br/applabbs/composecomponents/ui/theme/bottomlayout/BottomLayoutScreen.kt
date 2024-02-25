@@ -1,6 +1,5 @@
 package br.applabbs.composecomponents.ui.theme.bottomlayout
 
-import androidx.compose.foundation.ExperimentalFoundationApi
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
@@ -25,7 +24,7 @@ import br.applabbs.composecomponents.R
 import br.applabbs.composecomponents.ui.theme.Green30
 import br.applabbs.composecomponents.ui.theme.home.Routes
 
-@OptIn(ExperimentalFoundationApi::class, ExperimentalMaterial3Api::class)
+@OptIn(ExperimentalMaterial3Api::class)
 @Composable
 internal fun BottomLayoutScreen(navHostController: NavHostController){
 

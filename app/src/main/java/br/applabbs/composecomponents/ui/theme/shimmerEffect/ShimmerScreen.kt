@@ -1,5 +1,6 @@
 package br.applabbs.composecomponents.ui.theme.shimmerEffect
 
+import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
@@ -10,6 +11,7 @@ import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.rounded.AccountBox
+import androidx.compose.material.icons.rounded.AddCircle
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
@@ -19,9 +21,9 @@ import androidx.compose.material3.TopAppBar
 import androidx.compose.material3.TopAppBarDefaults
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
+import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
-import androidx.compose.runtime.getValue
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
@@ -33,6 +35,7 @@ import androidx.compose.ui.unit.sp
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.rememberNavController
 import br.applabbs.composecomponents.R
+import br.applabbs.composecomponents.ui.theme.AquaBlue
 import br.applabbs.composecomponents.ui.theme.Green30
 import br.applabbs.composecomponents.ui.theme.home.Routes
 import kotlinx.coroutines.delay
@@ -113,13 +116,23 @@ private fun ItemList(){
     Row(
         modifier = Modifier
             .fillMaxWidth()
-            .padding(16.dp)
+            .padding(8.dp)
+            .background(color = AquaBlue)
     ) {
         Icon(
             imageVector = Icons.Rounded.AccountBox,
+            tint = Green30,
             contentDescription = null,
             modifier = Modifier.size(80.dp)
         )
+
+        Icon(
+            imageVector = Icons.Rounded.AddCircle,
+            tint = Color.Red,
+            contentDescription = null,
+            modifier = Modifier.size(20.dp)
+        )
+
         Spacer(modifier = Modifier.width(10.dp))
         Text(
             text = "THIS IS A SINGLE TEXT LINE FOR MY LIST ITEM TO EMULATE SHIMMER EFFECT",
