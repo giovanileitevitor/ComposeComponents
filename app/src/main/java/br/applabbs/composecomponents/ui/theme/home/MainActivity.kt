@@ -25,11 +25,11 @@ import br.applabbs.composecomponents.ui.theme.handlingLists.HandlingListScreen
 import br.applabbs.composecomponents.ui.theme.instagramNews.InstagramNewsScreen
 import br.applabbs.composecomponents.ui.theme.livedata.LiveDataScreen
 import br.applabbs.composecomponents.ui.theme.notes.NotepadScreen
+import br.applabbs.composecomponents.ui.theme.shimmerEffect.ShimmerScreen
 import br.applabbs.composecomponents.ui.theme.swipeEffect.SwipeEffectCardScreen
 import br.applabbs.composecomponents.ui.theme.voicetotext.VoiceToTextScreen
 
-
-class MainActivity : ComponentActivity() {
+class MainActivity : ComponentActivity(), AnalyticsLogger by AnalyticsLoggerImpl() {
 
     private val viewModel : MainViewModel by viewModels()
 
@@ -45,6 +45,7 @@ class MainActivity : ComponentActivity() {
                 Home()
             }
         }
+        registerLifeCycleOwner(this)
     }
 }
 
@@ -64,6 +65,9 @@ fun NavHostImpl(navController: NavHostController){
         }
         composable(Routes.SWIPE_EFECT){
             SwipeEffectCardScreen(navHostController = navController)
+        }
+        composable(Routes.SHIMMER_EFFECT){
+            ShimmerScreen(navHostController = navController)
         }
         composable(Routes.CALC_IMC){
             CalculadoraImcScreen(navHostController = navController)

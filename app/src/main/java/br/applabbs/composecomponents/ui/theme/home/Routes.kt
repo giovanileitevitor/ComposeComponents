@@ -18,4 +18,5 @@ object Routes {
     const val VOICE_TEXT = "voice_text"
     const val DIALOG = "dialog"
     const val HANDLING_LIST = "handling_list"
+    const val SHIMMER_EFFECT = "shimmer_effect"
 }

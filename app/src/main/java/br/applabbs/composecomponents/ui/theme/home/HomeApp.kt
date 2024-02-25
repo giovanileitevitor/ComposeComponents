@@ -99,6 +99,14 @@ fun HomeApp(navHostController: NavHostController){
             }
 
             CustomCard(
+                description = "Shimmer Effect without Library",
+                statusMessage = "Last Update: 25/Fev/2024",
+                statusType = StatusType.WITH_ERROR
+            ){
+                navHostController.navigate(Routes.SHIMMER_EFFECT)
+            }
+
+            CustomCard(
                 description = "Swipe effect (or parallax effect)",
                 statusMessage = "Last Update: 28/Sep/2023",
                 statusType = StatusType.COMPLETED
