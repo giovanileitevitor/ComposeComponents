@@ -85,7 +85,7 @@ fun HomeApp(navHostController: NavHostController){
             CustomCard(
                 description = "Document Scanner with ML Kit",
                 statusMessage = "Last Update: 04/Mar/2024",
-                statusType = StatusType.UNDER_DEV
+                statusType = StatusType.COMPLETED
             ){
                 navHostController.navigate(Routes.DOCSCAN)
             }
