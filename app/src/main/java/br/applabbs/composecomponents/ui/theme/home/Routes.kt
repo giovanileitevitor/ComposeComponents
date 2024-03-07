@@ -19,4 +19,5 @@ object Routes {
     const val DIALOG = "dialog"
     const val HANDLING_LIST = "handling_list"
     const val SHIMMER_EFFECT = "shimmer_effect"
+    const val DOCSCAN = "doc_scan"
 }

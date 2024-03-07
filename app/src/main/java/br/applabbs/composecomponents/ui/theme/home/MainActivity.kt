@@ -18,6 +18,7 @@ import br.applabbs.composecomponents.ui.theme.bottomlayout.BottomLayoutScreen
 import br.applabbs.composecomponents.ui.theme.buscaCep.ui.BuscaCepScreen
 import br.applabbs.composecomponents.ui.theme.calcImc.CalculadoraImcScreen
 import br.applabbs.composecomponents.ui.theme.dialog.DialogScreen
+import br.applabbs.composecomponents.ui.theme.docscan.DocScanScreen
 import br.applabbs.composecomponents.ui.theme.experiences.ExperienceScreen
 import br.applabbs.composecomponents.ui.theme.finance.ui.FinanceScreen
 import br.applabbs.composecomponents.ui.theme.gridImage.ZoomScreen
@@ -62,6 +63,9 @@ fun NavHostImpl(navController: NavHostController){
     ){
         composable(Routes.HOME){
             HomeApp(navHostController = navController)
+        }
+        composable(Routes.DOCSCAN){
+            DocScanScreen(navHostController = navController)
         }
         composable(Routes.SWIPE_EFECT){
             SwipeEffectCardScreen(navHostController = navController)

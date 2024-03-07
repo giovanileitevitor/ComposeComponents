@@ -83,6 +83,14 @@ fun HomeApp(navHostController: NavHostController){
                 .padding(paddingValues = paddingValues)
         ) {
             CustomCard(
+                description = "Document Scanner with ML Kit",
+                statusMessage = "Last Update: 04/Mar/2024",
+                statusType = StatusType.UNDER_DEV
+            ){
+                navHostController.navigate(Routes.DOCSCAN)
+            }
+
+            CustomCard(
                 description = "Dialog and Custom Dialog",
                 statusMessage = "Last Update: 21/Fev/2024",
                 statusType = StatusType.COMPLETED

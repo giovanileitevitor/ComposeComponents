@@ -55,6 +55,7 @@ android {
 }
 
 dependencies {
+    implementation("com.google.android.gms:play-services-mlkit-document-scanner:16.0.0-beta1")
     val ktorVersion = "2.3.2"
     val koinVersion = "3.4.0"
 
