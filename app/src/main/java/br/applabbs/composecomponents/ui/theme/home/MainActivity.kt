@@ -24,6 +24,7 @@ import br.applabbs.composecomponents.ui.theme.finance.ui.FinanceScreen
 import br.applabbs.composecomponents.ui.theme.gridImage.ZoomScreen
 import br.applabbs.composecomponents.ui.theme.handlingLists.HandlingListScreen
 import br.applabbs.composecomponents.ui.theme.instagramNews.InstagramNewsScreen
+import br.applabbs.composecomponents.ui.theme.linegraph.LineGraphScreen
 import br.applabbs.composecomponents.ui.theme.livedata.LiveDataScreen
 import br.applabbs.composecomponents.ui.theme.notes.NotepadScreen
 import br.applabbs.composecomponents.ui.theme.shimmerEffect.ShimmerScreen
@@ -114,6 +115,9 @@ fun NavHostImpl(navController: NavHostController){
         }
         composable(Routes.HANDLING_LIST){
             HandlingListScreen(navHostController = navController)
+        }
+        composable(Routes.LINE_GRAPH){
+            LineGraphScreen(navHostController = navController)
         }
 
         //implement other composable itens

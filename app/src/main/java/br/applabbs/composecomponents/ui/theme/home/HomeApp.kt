@@ -218,6 +218,14 @@ fun HomeApp(navHostController: NavHostController){
                 navHostController.navigate(Routes.VOICE_TEXT)
             }
 
+            CustomCard(
+                description = "Line Graph",
+                statusMessage = "Last Update: 06/May/2024",
+                statusType = StatusType.UNDER_DEV
+            ){
+                navHostController.navigate(Routes.LINE_GRAPH)
+            }
+
 
 
         }
