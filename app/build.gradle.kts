@@ -98,10 +98,10 @@ dependencies {
     debugImplementation("androidx.compose.ui:ui-test-manifest")
 
     // Koin testing tools
-    testImplementation("io.insert-koin:koin-test:$koinVersion")
-    testImplementation("io.insert-koin:koin-test-junit4:$koinVersion")
-    testImplementation("io.kotlintest:kotlintest-runner-junit5:3.4.0")
-    testImplementation("io.kotlintest:kotlintest-extensions-koin:3.4.0")
+    //testImplementation("io.insert-koin:koin-test:$koinVersion")
+    //testImplementation("io.insert-koin:koin-test-junit4:$koinVersion")
+    //testImplementation("io.kotlintest:kotlintest-runner-junit5:3.4.0")
+    //testImplementation("io.kotlintest:kotlintest-extensions-koin:3.4.0")
     testImplementation("io.mockk:mockk:1.13.8")
 
 }

@@ -28,6 +28,7 @@ import br.applabbs.composecomponents.ui.theme.linegraph.LineGraphScreen
 import br.applabbs.composecomponents.ui.theme.livedata.LiveDataScreen
 import br.applabbs.composecomponents.ui.theme.notes.NotepadScreen
 import br.applabbs.composecomponents.ui.theme.shimmerEffect.ShimmerScreen
+import br.applabbs.composecomponents.ui.theme.spinloading.SpinLoadingScreen
 import br.applabbs.composecomponents.ui.theme.swipeEffect.SwipeEffectCardScreen
 import br.applabbs.composecomponents.ui.theme.voicetotext.VoiceToTextScreen
 
@@ -118,6 +119,9 @@ fun NavHostImpl(navController: NavHostController){
         }
         composable(Routes.LINE_GRAPH){
             LineGraphScreen(navHostController = navController)
+        }
+        composable(Routes.SPIN_LOADING){
+            SpinLoadingScreen(navHostController = navController)
         }
 
         //implement other composable itens

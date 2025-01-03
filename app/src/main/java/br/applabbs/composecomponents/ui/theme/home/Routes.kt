@@ -21,4 +21,5 @@ object Routes {
     const val SHIMMER_EFFECT = "shimmer_effect"
     const val DOCSCAN = "doc_scan"
     const val LINE_GRAPH = "line_graph"
+    const val SPIN_LOADING = "spin_loading"
 }

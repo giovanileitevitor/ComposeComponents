@@ -83,6 +83,15 @@ fun HomeApp(navHostController: NavHostController){
                 .padding(paddingValues = paddingValues)
         ) {
             CustomCard(
+                description = "Spin box as Loading",
+                statusMessage = "Last Update: 02/JAN/2025",
+                statusType = StatusType.UNDER_DEV
+            ){
+                navHostController.navigate(Routes.SPIN_LOADING)
+            }
+
+
+            CustomCard(
                 description = "Document Scanner with ML Kit",
                 statusMessage = "Last Update: 04/Mar/2024",
                 statusType = StatusType.COMPLETED
