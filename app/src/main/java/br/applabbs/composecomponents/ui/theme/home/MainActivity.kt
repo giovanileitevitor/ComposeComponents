@@ -27,6 +27,7 @@ import br.applabbs.composecomponents.ui.theme.instagramNews.InstagramNewsScreen
 import br.applabbs.composecomponents.ui.theme.linegraph.LineGraphScreen
 import br.applabbs.composecomponents.ui.theme.livedata.LiveDataScreen
 import br.applabbs.composecomponents.ui.theme.notes.NotepadScreen
+import br.applabbs.composecomponents.ui.theme.pulseanimation.PulseAnimationScreen
 import br.applabbs.composecomponents.ui.theme.shimmerEffect.ShimmerScreen
 import br.applabbs.composecomponents.ui.theme.spinloading.SpinLoadingScreen
 import br.applabbs.composecomponents.ui.theme.swipeEffect.SwipeEffectCardScreen
@@ -122,6 +123,9 @@ fun NavHostImpl(navController: NavHostController){
         }
         composable(Routes.SPIN_LOADING){
             SpinLoadingScreen(navHostController = navController)
+        }
+        composable(Routes.PULSE_ANIMATION){
+            PulseAnimationScreen(navHostController = navController)
         }
 
         //implement other composable itens

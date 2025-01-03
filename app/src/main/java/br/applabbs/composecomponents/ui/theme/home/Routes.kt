@@ -22,4 +22,5 @@ object Routes {
     const val DOCSCAN = "doc_scan"
     const val LINE_GRAPH = "line_graph"
     const val SPIN_LOADING = "spin_loading"
+    const val PULSE_ANIMATION = "pulse_animation"
 }

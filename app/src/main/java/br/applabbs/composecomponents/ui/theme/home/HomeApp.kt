@@ -85,9 +85,17 @@ fun HomeApp(navHostController: NavHostController){
             CustomCard(
                 description = "Spin box as Loading",
                 statusMessage = "Last Update: 02/JAN/2025",
-                statusType = StatusType.UNDER_DEV
+                statusType = StatusType.COMPLETED
             ){
                 navHostController.navigate(Routes.SPIN_LOADING)
+            }
+
+            CustomCard(
+                description = "Pulse Animation as Loading box",
+                statusMessage = "Last Update: 02/JAN/2025",
+                statusType = StatusType.COMPLETED
+            ){
+                navHostController.navigate(Routes.PULSE_ANIMATION)
             }
 
 
